@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        flatDir { dirs '/data/data/com.termux/files/usr/share/java' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'  // ← КЛЮЧЕВОЕ!
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        flatDir { dirs '/data/data/com.termux/files/usr/share/java' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
